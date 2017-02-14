@@ -81,6 +81,7 @@
             </div>
         </div>
       <h1 id="geoResults">
+      Lets go on an adventure where everything started.
       </h1>
     </center>
     </div>
@@ -106,7 +107,12 @@
 
     function showPosition(position) {
 
-    	window.open("http://i.imgur.com/E2LFlUa.jpg");
+    	if((position.coords.latitude > 37.69085034277904 && position.coords.longitude > -97.35253572463989) && (position.coords.latitude < 37.69238276385804 && position.coords.longitude < -97.3484855890274)){
+    		outputLabel.innerHTML = "Go where the wild animals meet fountains and lights.";
+    		window.open("http://i.imgur.com/E2LFlUa.jpg");
+
+    	}
+    	
         outputLabel.innerHTML = "Latitude: " + position.coords.latitude +
             "<br>Longitude: " + position.coords.longitude;
     }
